@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+group 'com.dongxie'
+version '0.0.1'
+
+sourceCompatibility = 1.8
+
+dependencies {
+    compile project(':view')
+    compile 'org.springframework.boot:spring-boot-starter-web:2.0.1.RELEASE'
+}
