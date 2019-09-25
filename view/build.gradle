@@ -1,0 +1,41 @@
+plugins {
+  id 'com.moowork.node'
+}
+
+group 'com.dongxie'
+version '0.0.1'
+
+//配置node、yarn的版本
+node {
+  version '10.16.0'
+  yarnVersion '1.17.3'
+  download false
+}
+
+//使用淘宝镜像
+task aliRegistry(type: YarnTask) {
+  group = 'node'
+  args = ['install', '--registry=https://registry.npm.taobao.org']
+}
+
+//yarn命令编译前台
+task yarnBuild(type: YarnTask, dependsOn: aliRegistry) {
+  group = 'node'
+  args = ['run', 'build']
+}
+
+jar.dependsOn yarnBuild
+
+//yarn命令编译启动前台
+task yarnStart(type: YarnTask, dependsOn: aliRegistry) {
+  group = 'node'
+  args = ['run', 'dev']
+}
+
+//拷贝文件
+//task copyFiles(type: Copy, dependsOn: yarnBuild) {
+//    group = "node"
+//    from "dist/dist"
+//    include "**/**"
+//    into "${project.buildDir}/resources/main/public-web-resources"
+//}
