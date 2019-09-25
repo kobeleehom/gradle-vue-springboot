@@ -7,6 +7,18 @@ version '0.0.1'
 
 sourceCompatibility = 1.8
 
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+        resources {
+            srcDir '../view/build/resources/main' //将view中编译后的代码作为资源添加进来
+        }
+
+    }
+}
+
 dependencies {
     compile project(':view')
     compile 'org.springframework.boot:spring-boot-starter-web:2.0.1.RELEASE'
