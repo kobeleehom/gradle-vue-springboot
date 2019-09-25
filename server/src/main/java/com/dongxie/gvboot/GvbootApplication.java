@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GvbootApplication {
 
     public static void main(String[] args) {
-        new SpringApplication(GvbootApplication.class).run(args);
+        SpringApplication.run(GvbootApplication.class, args);
     }
 
     @RequestMapping(value = "/api/hello", method = RequestMethod.GET)

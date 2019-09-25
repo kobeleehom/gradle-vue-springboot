@@ -1,23 +1,25 @@
 # gradle-vue-springboot
 
 #### 介绍
-gradle构建的vue+springboot脚手架
+gradle构建的vue+springboot脚手架,启动后台会自动先编译前台，并编译后的代码作为静态资源加载到jar中，便于直接访问。
+- server模块为后台
+- view模块为前台
 
 #### 软件架构
-软件架构说明
+- 后台springboot工程
+- 前台使用vue-cli生成的基本工程
+- 前后台分离单独开发、测试，部署时前台作为后台资源文件一并部署，一个包包含前后台代码
 
 
 #### 安装教程
 
-1. xxxx
-2. xxxx
-3. xxxx
+1. 导入工程到对应ide工具，选择gradle构建
+2. 前台本地启动：
+- 方式一：直接使用gradle运行yarnStart的task即可
+- 方式二：切换到view目录下，直接yarn dev或者npm run dev
 
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
+3. 后台本地启动：
+- 执行GvbootApplication的main方法即可
 
 #### 参与贡献
 
@@ -25,13 +27,3 @@ gradle构建的vue+springboot脚手架
 2. 新建 Feat_xxx 分支
 3. 提交代码
 4. 新建 Pull Request
-
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
